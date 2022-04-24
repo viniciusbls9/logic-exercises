@@ -1,9 +1,4 @@
-import { remainingMinutesInOven, preparationTimeInMinutes } from '.'
-
-function totalTimeInMinutes(numberOfLayers: number, actualMinutesInOven: number): number {
-  const preparationLayersTime = numberOfLayers * 2
-  return preparationLayersTime + actualMinutesInOven
-}
+import { remainingMinutesInOven, preparationTimeInMinutes, totalTimeInMinutes } from './lasagna'
 
 
 describe('LucianLusciousLasagna', () => {
@@ -16,8 +11,6 @@ describe('LucianLusciousLasagna', () => {
   })
 
   test('should calculates the total working time', () => {
-    const preparation = preparationTimeInMinutes(2)
-    const remain = remainingMinutesInOven(30)
-    expect(totalTimeInMinutes(preparation, remain)).toBe(34)
+    expect(totalTimeInMinutes(3, 20)).toBe(26)
   })
 })
